@@ -1,20 +1,20 @@
 <template>
   <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody v-for="category in categories">
-          <product-category-row :category="category">
-          </product-category-row>
-          <product-row v-for="item in itemsForCategory(category)"
-          :name="item.name"
-          :price="item.price"
-          :stocked="item.stocked">
-          </product-row>
-        </tbody>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody v-for="category in categories" v-if="itemsForCategory(category).length > 0">
+        <product-category-row :category="category">
+        </product-category-row>
+        <product-row v-for="item in itemsForCategory(category)"
+        :name="item.name"
+        :price="item.price"
+        :stocked="item.stocked">
+      </product-row>
+  </tbody>
   </table>
 </template>
 
