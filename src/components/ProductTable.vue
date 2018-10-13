@@ -27,7 +27,7 @@ export default {
     ProductRow,
     ProductCategoryRow
   },
-  props: ["items"],
+  props: ["items", "showStockedOnly"],
   computed: {
     categories() {
       const categories = this.items.map((product) => {
@@ -39,6 +39,9 @@ export default {
   methods: {
     itemsForCategory(category) {
       return this.items.filter((product) => {
+        if (this.showStockedOnly) {
+          return product.category == category && product.stocked
+        }
         return product.category == category
       })
     }

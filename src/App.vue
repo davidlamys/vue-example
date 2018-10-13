@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <search-bar></search-bar>
-    <product-table :items="items"></product-table>
-  </div>
+    <search-bar @showStockedOnly="updateShowStock">
+    </search-bar>
+    <product-table
+    :items="items"
+    :showStockedOnly="showStockedOnly">
+    </product-table>
+</div>
 </template>
 
 <script>
@@ -17,6 +21,7 @@ export default {
   },
   data () {
     return {
+      showStockedOnly: false,
       items: [
         {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
         {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
@@ -25,6 +30,11 @@ export default {
         {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
         {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
       ]
+    }
+  },
+  methods: {
+    updateShowStock(value) {
+      this.showStockedOnly = value
     }
   }
 }
