@@ -1,5 +1,5 @@
 # ThinkingInReact
-
+This is me, re-writing the simple list application written in React @ https://reactjs.org/docs/thinking-in-react.html
 ## Project setup
 ```
 yarn install
