@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <search-bar></search-bar>
     <product-table :items="items"></product-table>
   </div>
 </template>
@@ -7,11 +8,12 @@
 <script>
 
 import ProductTable from './components/ProductTable.vue'
-
+import SearchBar from './components/SearchBar.vue'
 export default {
   name: 'app',
   components: {
-    ProductTable
+    ProductTable,
+    SearchBar
   },
   data () {
     return {
