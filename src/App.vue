@@ -1,25 +1,17 @@
 <template>
   <div id="app">
-    <table>
-      <product-row v-for = "item in items"
-            :name="item.name"
-            :price="item.price"
-            :stocked="item.stocked">
-      </product-row>
-    </table>
+    <product-table :items="items"></product-table>
   </div>
 </template>
 
 <script>
 
-import ProductRow from './components/ProductRow.vue'
-import ProductCategoryRow from './components/ProductCategoryRow.vue'
+import ProductTable from './components/ProductTable.vue'
 
 export default {
   name: 'app',
   components: {
-    ProductRow,
-    ProductCategoryRow
+    ProductTable
   },
   data () {
     return {
