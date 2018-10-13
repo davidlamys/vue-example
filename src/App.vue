@@ -39,4 +39,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+table {
+  width: 50%;
+  height: 100%;
+  border: 3px black double;
+  margin: 0 auto;
+}
+
+.category-header {
+  text-decoration: underline;
+}
 </style>

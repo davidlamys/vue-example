@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <th colSpan="2">
+    <th colSpan="2" class="category-header">
       {{ category }}
     </th>
   </tr>
