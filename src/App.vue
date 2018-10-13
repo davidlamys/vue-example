@@ -13,11 +13,13 @@
 <script>
 
 import ProductRow from './components/ProductRow.vue'
+import ProductCategoryRow from './components/ProductCategoryRow.vue'
 
 export default {
   name: 'app',
   components: {
-    ProductRow
+    ProductRow,
+    ProductCategoryRow
   },
   data () {
     return {
