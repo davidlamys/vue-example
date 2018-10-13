@@ -1,8 +1,11 @@
 <template>
   <form>
-    <input type="text" placeholder="Search..." />
+    <input type="text"
+     placeholder="Search..."
+     @input="$emit('searchTermUpdated', $event.target.value)"/>
     <p>
-      <input type="checkbox" @change="$emit('showStockedOnly', $event.target.checked)"/>
+      <input type="checkbox"
+       @change="$emit('showStockedOnly', $event.target.checked)"/>
       Only show products in stock
     </p>
   </form>

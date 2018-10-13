@@ -27,7 +27,7 @@ export default {
     ProductRow,
     ProductCategoryRow
   },
-  props: ["items", "showStockedOnly"],
+  props: ["items", "showStockedOnly", "searchedTerms"],
   computed: {
     categories() {
       const categories = this.items.map((product) => {
@@ -38,11 +38,19 @@ export default {
   },
   methods: {
     itemsForCategory(category) {
-      return this.items.filter((product) => {
+      return this.items
+      .filter((product) => {
         if (this.showStockedOnly) {
           return product.category == category && product.stocked
         }
         return product.category == category
+      })
+      .filter((product) => {
+        if (this.searchedTerms == "") {
+          return true
+        }
+        return product.name.toLowerCase()
+        .includes(this.searchedTerms.toLowerCase())
       })
     }
   }

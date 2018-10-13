@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <search-bar @showStockedOnly="updateShowStock">
+    <search-bar
+     @showStockedOnly="updateShowStock"
+     @searchTermUpdated="updateSearchTerm">
     </search-bar>
     <product-table
     :items="items"
-    :showStockedOnly="showStockedOnly">
+    :showStockedOnly="showStockedOnly"
+    :searchedTerms="searchedTerms">
     </product-table>
 </div>
 </template>
@@ -22,6 +25,7 @@ export default {
   data () {
     return {
       showStockedOnly: false,
+      searchedTerms:"",
       items: [
         {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
         {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
@@ -35,6 +39,9 @@ export default {
   methods: {
     updateShowStock(value) {
       this.showStockedOnly = value
+    },
+    updateSearchTerm(value) {
+      this.searchedTerms = value
     }
   }
 }
