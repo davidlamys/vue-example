@@ -10,7 +10,7 @@ export default {
   props: ['name', 'price', 'stocked'],
   computed: {
     color() {
-      return this.stocked ? "red" : "black"
+      return this.stocked ? "black" : "red"
     }
   }
 }
